@@ -1,0 +1,26 @@
+@baseUrl = http://localhost:3000
+@orderId = v10089015vdb-01
+
+### Criar pedido
+POST {{baseUrl}}/order
+Content-Type: application/json
+
+{
+  "numeroPedido": "{{orderId}}",
+  "valorTotal": 10000,
+  "dataCriacao": "2023-07-19T12:24:11.5299601+00:00",
+  "items": [
+    {
+      "idItem": "2434",
+      "quantidadeItem": 1,
+      "valorItem": 1000
+    }
+  ]
+}
+
+### Listar pedidos
+GET {{baseUrl}}/order/list
+
+### Buscar pedido por ID
+GET {{baseUrl}}/order/{{orderId}}
+
